@@ -31,7 +31,7 @@
 	<!-- Countdown CSS -->
 	<link rel="stylesheet" href="./css/countdown.css">
 	<!-- Polyfill CSS -->
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>	
 
 	<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -41,6 +41,11 @@
 </head>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+	<!-- AUDIO -->
+	<audio autoplay loop>
+		<source src="audio/CapitalCities-SafeAndSound.mp3" type="audio/mpeg">
+	</audio>
+	<!-- END AUDIO -->
 
 	<!-- LOADER -->
 	<div id="preloader">
@@ -54,7 +59,7 @@
 	<header class="top-header">
 		<nav class="navbar header-nav navbar-expand-lg">
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><img src="images/logo.jpg" width="180px" height="61px" alt="image"></a>
+				<a class="navbar-brand" href="#home"><img src="images/logo.jpg" width="180px" height="61px" alt="image"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
 					aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
 					<span></span>
@@ -674,10 +679,7 @@
 							href="#home">Los Novios</a> Distributed by : <a href="#home">Los Novios</a></p>
 				</div>
 			</div>
-		</div>
-		<audio autoplay loop>
-			<source src="audio/CapitalCities-SafeAndSound.mp3" type="audio/mpeg">
-		</audio>
+		</div>		
 	</footer>
 	<!-- End Footer -->
 
