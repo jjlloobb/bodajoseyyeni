@@ -12,14 +12,13 @@ $("#contactForm").validator().on("submit", function (event) {
 
 
 function submitForm(){
-    debugger;
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
     var message = $("#message").val();    
 
-    if (email) {
+    if (email && email.match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)) {
         var data = {
             name: name,
             email: email.trim(),
