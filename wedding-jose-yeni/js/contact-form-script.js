@@ -19,7 +19,7 @@ function submitForm(){
     var phone = $("#phone").val();
     var message = $("#message").val();    
 
-    if (email != null) {
+    if (email) {
         var data = {
             name: name,
             email: email.trim(),
@@ -32,8 +32,7 @@ function submitForm(){
             url: "/api/sendemailhttp",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),
-            success : function(text){
-                debugger;
+            success : function(text){                
                 if (text == "success"){
                     formSuccess();
                 } else {
