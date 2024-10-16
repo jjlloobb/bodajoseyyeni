@@ -17,7 +17,7 @@ function submitForm(){
     var email = $("#email").val();
     var phone = $("#phone").val();
     var message = $("#message").val();
-    var event = $('#event option:selected').text();
+    var events = $('#event option:selected').text();
 
     if (email && email.match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)) {
         var data = {
@@ -25,7 +25,7 @@ function submitForm(){
             email: email.trim(),
             phone: phone.trim(),            
             message: message,
-            event: event
+            events: events
         }
 
         $.ajax({
