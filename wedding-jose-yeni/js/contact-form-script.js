@@ -17,16 +17,16 @@ function submitForm(){
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-    var msg_subject = $("#msg_subject").val();
-    var message = $("#message").val();
-
-    var data = {
-        name: name,
-        email: email,        
-        message: message
-    }
+    var message = $("#message").val();    
 
     if (email != null) {
+        var data = {
+            name: name,
+            email: email.trim(),
+            phone: phone.trim(),
+            message: message
+        }
+
         $.ajax({
             type: "POST",
             url: "/api/sendemailhttp",
