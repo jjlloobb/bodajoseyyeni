@@ -12,31 +12,42 @@ $("#contactForm").validator().on("submit", function (event) {
 
 
 function submitForm(){
+    debugger;
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
+    var phone = $("#phone").val();
     var msg_subject = $("#msg_subject").val();
     var message = $("#message").val();
 
+    var data = {
+        name: name,
+        email: email,        
+        message: message
+    }
 
-    $.ajax({
-        type: "POST",
-        url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&message=" + message,
-        success : function(text){
-            if (text == "success"){
-                formSuccess();
-            } else {
-                formError();
-                submitMSG(false,text);
+    if (email != null) {
+        $.ajax({
+            type: "POST",
+            url: "/api/sendemailhttp",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            success : function(text){
+                debugger;
+                if (text == "success"){
+                    formSuccess();
+                } else {
+                    formError();
+                    submitMSG(false,text);
+                }
             }
-        }
-    });
+        });
+    }    
 }
 
 function formSuccess(){
     $("#contactForm")[0].reset();
-    submitMSG(true, "Message Submitted!")
+    submitMSG(true, "Mensaje enviado!")
 }
 
 function formError(){
