@@ -44,7 +44,7 @@ function populateNumbers() {
     // CHECK DATE
     if (distance < 0) {
         // countdownContainer.style.display = 'none';
-        alert("Congratulations on reaching your wedding day! We wish you all the best for today and hope you have a fantastic day to remember. Good luck and we hope you enjoyed counting down!");
+        alert("¡Felicidades por llegar el día de la boda! Te deseamos todo lo mejor para hoy y esperamos que tengas un día fantástico para recordar. ¡Buena suerte y esperamos que hayas disfrutado de la cuenta regresiva! ¡un gran abrazo de parte los novios! =)");
         clearInterval(countdownActive);
         const countdownEl = document.querySelector('.countdown');
         countdownEl.style.display = 'none';
